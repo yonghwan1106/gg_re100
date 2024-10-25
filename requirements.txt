@@ -1,20 +1,4 @@
-# requirements.txt
 
-# 기본 데이터 처리 및 수치 계산
-numpy==1.24.3
-pandas==2.0.3
-
-# 데이터 시각화
 matplotlib==3.7.1
+numpy==1.24.3
 seaborn==0.12.2
-
-# 주피터 노트북 환경 (선택사항)
-jupyter==1.0.0
-notebook==7.0.3
-
-# 가상환경 관리 (선택사항)
-virtualenv==20.24.5
-
-# 기타 유용한 라이브러리들 (선택사항)
-python-dotenv==1.0.0  # 환경변수 관리
-requests==2.31.0      # API 호출시 필요
