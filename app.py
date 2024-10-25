@@ -1,5 +1,9 @@
+import streamlit as st
 import matplotlib.pyplot as plt
 import numpy as np
+
+# 페이지 설정
+st.set_page_config(layout="wide", page_title="RE100 시장 세그먼트")
 
 # 데이터 설정
 segments = ['중기업 제조업', '중기업 서비스업', '소기업 제조업', 
@@ -8,9 +12,9 @@ sizes = [35, 25, 15, 10, 8, 5, 2]
 colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884d8', '#82ca9d', '#ffc658']
 explode = (0.1, 0.05, 0, 0, 0, 0, 0)  # 주요 세그먼트 강조
 
-# 그래프 스타일 설정
-plt.style.use('seaborn')
-plt.figure(figsize=(12, 8))
+# 그래프 생성
+fig, ax = plt.subplots(figsize=(12, 8))
+plt.clf()  # Clear the current figure
 
 # 파이 차트 생성
 wedges, texts, autotexts = plt.pie(sizes,
@@ -51,8 +55,5 @@ plt.legend(wedges, segments,
 
 plt.axis('equal')
 
-# 그래프 표시
-plt.show()
-
-# 그래프 저장 (선택사항)
-# plt.savefig('market_segments.png', bbox_inches='tight', dpi=300)
+# Streamlit에 그래프 표시
+st.pyplot(fig)
